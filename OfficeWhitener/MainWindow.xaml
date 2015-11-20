@@ -1,0 +1,17 @@
+﻿<Window x:Class="OfficeWhitener.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:OfficeWhitener"
+        Title="Office Whitener" Height="300" Width="400" Loaded="Window_Loaded"
+        PreviewDragOver="Window_PreviewDragOver" Drop="Window_Drop" AllowDrop="True" Background="#FF111111" Foreground="White" ResizeMode="CanResizeWithGrip" WindowStyle="ToolWindow">
+    <Window.DataContext>
+        <local:MainWindowVM />
+    </Window.DataContext>
+    <Grid>
+        <Grid Opacity="{Binding OverlayOpacity}">
+            <TextBlock Text="&#xE1A5;" FontFamily="Segoe UI Symbol" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72" Foreground="#33FFFFFF"/>
+            <TextBlock Text="Drop your office files...." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <ListBox ItemsSource="{Binding Items}" Visibility="Visible" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" ItemContainerStyle="{DynamicResource ListBoxItemStyle}" ItemTemplate="{DynamicResource DataTemplate}" />
+    </Grid>
+</Window>
