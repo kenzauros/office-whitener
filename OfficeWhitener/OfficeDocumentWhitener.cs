@@ -243,6 +243,7 @@ namespace OfficeWhitener
                                                        .Nodes()
                                                        .OfType<XText>())
                 textNode.Value = "";
+            coreFilePropertiesXDoc.Elements(cp + "coreProperties").Elements(cp + "lastPrinted").Remove();
             XElement revision = coreFilePropertiesXDoc.Elements(cp + "coreProperties").Elements(cp + "revision").FirstOrDefault();
             if (revision != null)
                 revision.Value = "1";
